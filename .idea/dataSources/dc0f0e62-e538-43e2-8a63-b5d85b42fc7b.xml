@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="apirestreservas@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="apirestreservas">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="oktrueque"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="practicas-bd"/>
+    <schema id="8" parent="1" name="practicas-bd2"/>
+    <schema id="9" parent="1" name="sakila"/>
+    <schema id="10" parent="1" name="sys"/>
+    <schema id="11" parent="1" name="world"/>
+    <table id="12" parent="2" name="cliente"/>
+    <table id="13" parent="2" name="reserva"/>
+    <table id="14" parent="2" name="vendedor"/>
+    <column id="15" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="16" parent="12" name="apellido">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="17" parent="12" name="celular">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="18" parent="12" name="email">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="19" parent="12" name="nombre">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="20" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="21" parent="13" name="codigo_de_reserva">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="13" name="costo">
+      <Position>2</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="13" name="fecha_de_reserva">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="24" parent="13" name="precio_venta">
+      <Position>4</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="13" name="id_cliente">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="26" parent="13" name="id_vendedor">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="27" parent="13" name="FK33h3i3oapwncc68x5n11si6dc">
+      <ColNames>id_cliente</ColNames>
+    </index>
+    <index id="28" parent="13" name="FKbky325uodtujwtiawcwfbtiil">
+      <ColNames>id_vendedor</ColNames>
+    </index>
+    <key id="29" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>codigo_de_reserva</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="30" parent="13" name="FK33h3i3oapwncc68x5n11si6dc">
+      <ColNames>id_cliente</ColNames>
+      <RefSchemaName>apirestreservas</RefSchemaName>
+      <RefTableName>cliente</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="31" parent="13" name="FKbky325uodtujwtiawcwfbtiil">
+      <ColNames>id_vendedor</ColNames>
+      <RefSchemaName>apirestreservas</RefSchemaName>
+      <RefTableName>vendedor</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="32" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="33" parent="14" name="apellido">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="34" parent="14" name="celular">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="35" parent="14" name="email">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="36" parent="14" name="nombre">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="37" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
