@@ -1,6 +1,4 @@
-package com.iaewtpi.Model;
-
-import org.springframework.boot.autoconfigure.web.ResourceProperties;
+package com.iaewtpi.ModeloRest;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +9,8 @@ import javax.persistence.Id;
  * Created by Facundo on 25/05/2017.
  */
 @Entity
-public class Cliente {
+public class Vendedor {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -21,10 +20,10 @@ public class Cliente {
     private String email;
     private String celular;
 
-    public Cliente() {
+    public Vendedor() {
     }
 
-    public Cliente(String nombre, String apellido, String email, String celular) {
+    public Vendedor(String nombre, String apellido, String email, String celular) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;

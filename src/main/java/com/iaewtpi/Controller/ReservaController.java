@@ -1,9 +1,7 @@
 package com.iaewtpi.Controller;
 
-import com.iaewtpi.Model.Reserva;
-import com.iaewtpi.Service.ClienteService;
+import com.iaewtpi.ModeloRest.Reserva;
 import com.iaewtpi.Service.ReservaService;
-import com.iaewtpi.Service.VendedorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;

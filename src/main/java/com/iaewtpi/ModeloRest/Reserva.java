@@ -1,4 +1,4 @@
-package com.iaewtpi.Model;
+package com.iaewtpi.ModeloRest;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

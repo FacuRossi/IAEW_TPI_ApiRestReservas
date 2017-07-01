@@ -1,6 +1,6 @@
 package com.iaewtpi.Controller;
 
-import com.iaewtpi.Model.Cliente;
+import com.iaewtpi.ModeloRest.Cliente;
 import com.iaewtpi.Service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;

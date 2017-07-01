@@ -1,6 +1,6 @@
 package com.iaewtpi.Controller;
 
-import com.iaewtpi.Model.Vendedor;
+import com.iaewtpi.ModeloRest.Vendedor;
 import com.iaewtpi.Service.VendedorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;

@@ -1,7 +1,7 @@
 package com.iaewtpi.Service;
 
 
-import com.iaewtpi.Model.Cliente;
+import com.iaewtpi.ModeloRest.Cliente;
 import com.iaewtpi.Repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

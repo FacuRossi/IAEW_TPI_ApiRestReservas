@@ -1,7 +1,7 @@
 package com.iaewtpi.Service;
 
 
-import com.iaewtpi.Model.Reserva;
+import com.iaewtpi.ModeloRest.Reserva;
 import com.iaewtpi.Repository.ReservaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

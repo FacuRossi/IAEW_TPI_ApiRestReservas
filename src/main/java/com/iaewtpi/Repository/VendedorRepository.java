@@ -1,6 +1,6 @@
 package com.iaewtpi.Repository;
 
-import com.iaewtpi.Model.Vendedor;
+import com.iaewtpi.ModeloRest.Vendedor;
 import org.springframework.data.repository.CrudRepository;
 
 /**

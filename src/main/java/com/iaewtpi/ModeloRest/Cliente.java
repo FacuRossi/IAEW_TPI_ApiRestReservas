@@ -1,4 +1,4 @@
-package com.iaewtpi.Model;
+package com.iaewtpi.ModeloRest;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,25 +9,22 @@ import javax.persistence.Id;
  * Created by Facundo on 25/05/2017.
  */
 @Entity
-public class Vendedor {
-
+public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String nombre;
     private String apellido;
-    private String email;
-    private String celular;
+    private String dni;
 
-    public Vendedor() {
+    public Cliente() {
     }
 
-    public Vendedor(String nombre, String apellido, String email, String celular) {
+    public Cliente(String nombre, String apellido, String dni) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.email = email;
-        this.celular = celular;
+        this.dni = dni;
     }
 
     public int getId() {
@@ -54,19 +51,11 @@ public class Vendedor {
         this.apellido = apellido;
     }
 
-    public String getEmail() {
-        return email;
+    public String getDni() {
+        return dni;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getCelular() {
-        return celular;
-    }
-
-    public void setCelular(String celular) {
-        this.celular = celular;
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 }

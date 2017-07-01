@@ -1,6 +1,6 @@
 package com.iaewtpi.Repository;
 
-import com.iaewtpi.Model.Reserva;
+import com.iaewtpi.ModeloRest.Reserva;
 import org.springframework.data.repository.CrudRepository;
 
 /**
