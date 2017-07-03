@@ -22,4 +22,8 @@ public class ClienteService {
         clienteRepository.findAll().forEach(clientes :: add);
         return clientes;
     }
+
+    public Cliente getCliente(int id) {
+        return clienteRepository.findOne(id);
+    }
 }

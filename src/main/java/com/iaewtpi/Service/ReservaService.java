@@ -22,4 +22,8 @@ public class ReservaService {
         reservaRepository.findAll().forEach(reserva :: add);
         return reserva;
     }
+
+    public void add(Reserva reserva) {
+        reservaRepository.save(reserva);
+    }
 }

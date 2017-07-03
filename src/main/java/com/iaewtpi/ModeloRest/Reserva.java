@@ -22,13 +22,13 @@ public class Reserva {
     private Vendedor vendedor;
 
     private Date fechaDeReserva;
-    private double costo;
-    private double precioVenta;
+    private int costo;
+    private int precioVenta;
 
     public Reserva() {
     }
 
-    public Reserva(int codigoDeReserva, Cliente cliente, Vendedor vendedor, Date fechaDeReserva, double costo, double precioVenta) {
+    public Reserva(int codigoDeReserva, Cliente cliente, Vendedor vendedor, Date fechaDeReserva, int costo, int precioVenta) {
         this.codigoDeReserva = codigoDeReserva;
         this.cliente = cliente;
         this.vendedor = vendedor;
@@ -69,19 +69,19 @@ public class Reserva {
         this.fechaDeReserva = fechaDeReserva;
     }
 
-    public double getCosto() {
+    public int getCosto() {
         return costo;
     }
 
-    public void setCosto(double costo) {
+    public void setCosto(int costo) {
         this.costo = costo;
     }
 
-    public double getPrecioVenta() {
+    public int getPrecioVenta() {
         return precioVenta;
     }
 
-    public void setPrecioVenta(double precioVenta) {
+    public void setPrecioVenta(int precioVenta) {
         this.precioVenta = precioVenta;
     }
 }

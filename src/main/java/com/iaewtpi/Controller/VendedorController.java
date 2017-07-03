@@ -4,6 +4,7 @@ import com.iaewtpi.ModeloRest.Vendedor;
 import com.iaewtpi.Service.VendedorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,5 +22,10 @@ public class VendedorController {
     @RequestMapping("/vendedores")
     public List<Vendedor> getVendedores(){
         return vendedorService.getVendedores();
+    }
+
+    @RequestMapping("/vendedores/{id}")
+    public Vendedor getVendedor(@PathVariable int id){
+        return vendedorService.getVendedor(id);
     }
 }

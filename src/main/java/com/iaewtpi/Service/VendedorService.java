@@ -22,4 +22,8 @@ public class VendedorService {
         vendedorRepository.findAll().forEach(vendedores :: add);
         return vendedores;
     }
+
+    public Vendedor getVendedor(int id) {
+        return vendedorRepository.findOne(id);
+    }
 }
