@@ -1,6 +1,7 @@
 package com.iaewtpi.Controller;
 
 import com.iaewtpi.ConsumoSoap.consumoSoap;
+import com.iaewtpi.ModeloRest.ReservaSoap;
 import com.iaewtpi.reservasWsdl.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -52,6 +53,11 @@ public class SoapController {
             reservas.add(item);
         }
         return reservas;
+    }
+
+    @RequestMapping(method = RequestMethod.POST , value = "/reservaSoap")
+    public void newReservas (@RequestBody ReservaEntity reserva) throws IWCFReservaVehiculosReservarVehiculoStatusResponseFaultFaultMessage {
+        client.setReserva(reserva);
     }
 
 }

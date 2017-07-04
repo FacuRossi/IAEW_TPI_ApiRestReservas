@@ -46,4 +46,12 @@ public class consumoSoap {
         ConsultarReservasResponse2 response = client.consultarReservas(request);
         return response.getReservas();
     }
+
+    public void setReserva(ReservaEntity reservaPost) throws IWCFReservaVehiculosReservarVehiculoStatusResponseFaultFaultMessage {
+        ReservarVehiculoRequest newReserva = new ReservarVehiculoRequest();
+        newReserva.setApellidoNombreCliente(reservaPost.getApellidoNombreCliente());
+        newReserva.setIdVehiculoCiudad(reservaPost.getVehiculoPorCiudadId());
+        newReserva.setNroDocumentoCliente(reservaPost.getNroDocumentoCliente());
+        client.reservarVehiculo(newReserva);
+    }
 }
