@@ -16,10 +16,6 @@ public class ReservaController {
 
     @Autowired
     private ReservaService reservaService;
-//    @Autowired
-//    private ClienteService clienteService;
-//    @Autowired
-//    private VendedorService vendedorService;
 
     @RequestMapping("/reservas")
     public List<Reserva> getReservas(){

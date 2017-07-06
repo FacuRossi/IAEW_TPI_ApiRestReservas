@@ -2,8 +2,6 @@ package com.iaewtpi.ConsumoSoap;
 
 
 import com.iaewtpi.reservasWsdl.*;
-import org.springframework.context.annotation.Bean;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import javax.xml.bind.JAXBElement;

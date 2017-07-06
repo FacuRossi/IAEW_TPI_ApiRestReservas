@@ -27,10 +27,6 @@ public class ReservaService {
         reservaRepository.save(reserva);
     }
 
-    public Reserva getReserva(int id) {
-       return reservaRepository.findOne(id);
-    }
-
     public Reserva findByCodigoAndId(int codigo, int id) {
         return reservaRepository.findByCodigoDeReservaAndId(codigo,id);
     }

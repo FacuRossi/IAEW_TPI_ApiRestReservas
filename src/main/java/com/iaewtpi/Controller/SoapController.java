@@ -1,12 +1,9 @@
 package com.iaewtpi.Controller;
 
 import com.iaewtpi.ConsumoSoap.consumoSoap;
-import com.iaewtpi.ModeloRest.ReservaSoap;
 import com.iaewtpi.reservasWsdl.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
-import sun.util.resources.cldr.id.CurrencyNames_id;
 
 import java.util.ArrayList;
 import java.util.List;
