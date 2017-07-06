@@ -1,9 +1,8 @@
 package com.iaewtpi.ModeloRest;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -13,7 +12,9 @@ import java.util.Date;
 public class Reserva {
 
     @Id
-    private int codigoDeReserva;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     @OneToOne
     @JoinColumn(name="idCliente")
     private Cliente cliente;
@@ -21,10 +22,12 @@ public class Reserva {
     @JoinColumn(name="idVendedor")
     private Vendedor vendedor;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date fechaDeReserva;
     private int costo;
     private int precioVenta;
     private String estado;
+    private int codigoDeReserva;
 
     public Reserva() {
     }
@@ -37,6 +40,14 @@ public class Reserva {
         this.costo = costo;
         this.precioVenta = precioVenta;
         this.estado = estado;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getCodigoDeReserva() {

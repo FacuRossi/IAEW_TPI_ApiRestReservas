@@ -7,4 +7,5 @@ import org.springframework.data.repository.CrudRepository;
  * Created by Facundo on 25/05/2017.
  */
 public interface ReservaRepository extends CrudRepository<Reserva, Integer> {
+    Reserva findByCodigoDeReservaAndId(int codigo,int id);
 }

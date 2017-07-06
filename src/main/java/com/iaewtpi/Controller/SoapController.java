@@ -4,6 +4,7 @@ import com.iaewtpi.ConsumoSoap.consumoSoap;
 import com.iaewtpi.ModeloRest.ReservaSoap;
 import com.iaewtpi.reservasWsdl.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 import sun.util.resources.cldr.id.CurrencyNames_id;
 
@@ -18,6 +19,17 @@ import java.util.List;
 public class SoapController {
     @Autowired
     consumoSoap client;
+
+    //OauthController
+    @RequestMapping(method = RequestMethod.GET , value = "/paisesToken")
+    public List<PaisEntity> getPaisesValidandoToken(
+            @RequestParam(value = "token") String token) throws IWCFReservaVehiculosConsultarPaisesStatusResponseFaultFaultMessage {
+        List<PaisEntity> paises = new ArrayList<PaisEntity>();
+        for (PaisEntity item : client.getPaises().getValue().getPaisEntity()){
+            paises.add(item);
+        }
+        return paises;
+    }
 
     @RequestMapping(method = RequestMethod.GET , value = "/paises")
     public List<PaisEntity> getPaises () throws IWCFReservaVehiculosConsultarPaisesStatusResponseFaultFaultMessage {
@@ -56,8 +68,11 @@ public class SoapController {
     }
 
     @RequestMapping(method = RequestMethod.POST , value = "/reservaSoap")
-    public void newReservas (@RequestBody ReservaEntity reserva) throws IWCFReservaVehiculosReservarVehiculoStatusResponseFaultFaultMessage {
-        client.setReserva(reserva);
+    public void newReservas (
+            @RequestParam(value = "cliente") String cliente,
+            @RequestParam(value = "dni") String dni,
+            @RequestParam(value = "id") Integer id) throws IWCFReservaVehiculosReservarVehiculoStatusResponseFaultFaultMessage {
+        client.setReserva(cliente,dni,id);
     }
 
 }

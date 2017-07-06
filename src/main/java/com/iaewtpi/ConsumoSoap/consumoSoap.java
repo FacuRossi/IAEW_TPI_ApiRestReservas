@@ -3,6 +3,7 @@ package com.iaewtpi.ConsumoSoap;
 
 import com.iaewtpi.reservasWsdl.*;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import javax.xml.bind.JAXBElement;
@@ -47,11 +48,13 @@ public class consumoSoap {
         return response.getReservas();
     }
 
-    public void setReserva(ReservaEntity reservaPost) throws IWCFReservaVehiculosReservarVehiculoStatusResponseFaultFaultMessage {
-        ReservarVehiculoRequest newReserva = new ReservarVehiculoRequest();
-        newReserva.setApellidoNombreCliente(reservaPost.getApellidoNombreCliente());
-        newReserva.setIdVehiculoCiudad(reservaPost.getVehiculoPorCiudadId());
-        newReserva.setNroDocumentoCliente(reservaPost.getNroDocumentoCliente());
+    public void setReserva(String cliente,String dni, Integer id) throws IWCFReservaVehiculosReservarVehiculoStatusResponseFaultFaultMessage {
+        ObjectFactory fact = new ObjectFactory();
+        ReservarVehiculoRequest newReserva =fact.createReservarVehiculoRequest();
+        newReserva.setApellidoNombreCliente(fact.createReservarVehiculoRequestApellidoNombreCliente(cliente));
+        newReserva.setNroDocumentoCliente(fact.createReservarVehiculoRequestNroDocumentoCliente(dni));
+        newReserva.setIdVehiculoCiudad(id);
         client.reservarVehiculo(newReserva);
     }
+
 }

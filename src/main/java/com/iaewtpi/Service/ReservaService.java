@@ -30,4 +30,8 @@ public class ReservaService {
     public Reserva getReserva(int id) {
        return reservaRepository.findOne(id);
     }
+
+    public Reserva findByCodigoAndId(int codigo, int id) {
+        return reservaRepository.findByCodigoDeReservaAndId(codigo,id);
+    }
 }

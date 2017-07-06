@@ -31,9 +31,9 @@ public class ReservaController {
         reservaService.add(reserva);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/reservas/{id}")
-    public void registrarReserva (@RequestBody Reserva reserva, @PathVariable int id){
-        Reserva storedReserva = reservaService.getReserva(id);
+    @RequestMapping(method = RequestMethod.PUT, value = "/reservas/{codigo}/{id}")
+    public void registrarReserva (@RequestBody Reserva reserva, @PathVariable int codigo, @PathVariable int id){
+        Reserva storedReserva = reservaService.findByCodigoAndId(codigo,id);
         storedReserva.setEstado(reserva.getEstado());
         reservaService.add(storedReserva);
     }
