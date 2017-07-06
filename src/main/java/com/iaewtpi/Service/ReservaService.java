@@ -26,4 +26,8 @@ public class ReservaService {
     public void add(Reserva reserva) {
         reservaRepository.save(reserva);
     }
+
+    public Reserva getReserva(int id) {
+       return reservaRepository.findOne(id);
+    }
 }

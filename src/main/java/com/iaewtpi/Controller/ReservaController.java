@@ -30,4 +30,11 @@ public class ReservaController {
     public void registrarReserva (@RequestBody Reserva reserva){
         reservaService.add(reserva);
     }
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/reservas/{id}")
+    public void registrarReserva (@RequestBody Reserva reserva, @PathVariable int id){
+        Reserva storedReserva = reservaService.getReserva(id);
+        storedReserva.setEstado(reserva.getEstado());
+        reservaService.add(storedReserva);
+    }
 }

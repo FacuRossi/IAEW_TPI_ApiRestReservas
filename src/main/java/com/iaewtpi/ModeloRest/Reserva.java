@@ -24,17 +24,19 @@ public class Reserva {
     private Date fechaDeReserva;
     private int costo;
     private int precioVenta;
+    private String estado;
 
     public Reserva() {
     }
 
-    public Reserva(int codigoDeReserva, Cliente cliente, Vendedor vendedor, Date fechaDeReserva, int costo, int precioVenta) {
+    public Reserva(int codigoDeReserva, Cliente cliente, Vendedor vendedor, Date fechaDeReserva, int costo, int precioVenta, String estado) {
         this.codigoDeReserva = codigoDeReserva;
         this.cliente = cliente;
         this.vendedor = vendedor;
         this.fechaDeReserva = fechaDeReserva;
         this.costo = costo;
         this.precioVenta = precioVenta;
+        this.estado = estado;
     }
 
     public int getCodigoDeReserva() {
@@ -83,5 +85,13 @@ public class Reserva {
 
     public void setPrecioVenta(int precioVenta) {
         this.precioVenta = precioVenta;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }
